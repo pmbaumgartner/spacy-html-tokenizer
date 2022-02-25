@@ -7,7 +7,7 @@ from src.spacy_html_tokenizer import __version__, create_html_tokenizer
 
 
 def test_version():
-    version = "0.1.0"
+    version = "0.1.1"
     pyproject = tomli.loads(Path("pyproject.toml").read_text())
     assert pyproject["tool"]["poetry"]["version"] == version
     assert __version__ == version

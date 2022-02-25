@@ -1,10 +1,12 @@
 [tool.poetry]
 name = "spacy-html-tokenizer"
-version = "0.1.0"
+version = "0.1.1"
 description = "An HTML-friendly spaCy tokenizer"
 authors = ["Peter Baumgartner <5107405+pmbaumgartner@users.noreply.github.com>"]
 readme = "README.md"
 license = "MIT"
+homepage = "https://github.com/pmbaumgartner/spacy-html-tokenizer"
+repository = "https://github.com/pmbaumgartner/spacy-html-tokenizer"
 
 [tool.poetry.dependencies]
 python = "^3.8"
