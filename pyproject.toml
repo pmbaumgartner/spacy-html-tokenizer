@@ -1,0 +1,29 @@
+[tool.poetry]
+name = "spacy-html-tokenizer"
+version = "0.1.0"
+description = "An HTML-friendly spaCy tokenizer"
+authors = ["Peter Baumgartner <5107405+pmbaumgartner@users.noreply.github.com>"]
+readme = "README.md"
+license = "MIT"
+
+[tool.poetry.dependencies]
+python = "^3.8"
+spacy = "^3.2.2"
+selectolax = "^0.3.6"
+
+[tool.poetry.dev-dependencies]
+pytest = "^5.2"
+black = "^22.1.0"
+ipython = "^8.0.1"
+isort = "^5.10.1"
+flake8 = "^4.0.1"
+mypy = "^0.931"
+warc = {git = "https://github.com/erroneousboat/warc3"}
+pytest-cov = "^3.0.0"
+
+[build-system]
+requires = ["poetry-core>=1.0.0"]
+build-backend = "poetry.core.masonry.api"
+
+[tool.poetry.plugins."spacy_tokenizers"]
+"simple_corpus_stats" = "spacy_html_tokenizer.html_tokenizer:create_html_tokenizer"
