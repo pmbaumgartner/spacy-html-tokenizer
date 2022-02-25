@@ -2,6 +2,12 @@
 
 It's not an [HTML tokenizer](https://www.w3.org/TR/2011/WD-html5-20110113/tokenization.html#tokenization), but a tokenizer that works with text that happens to be embedded in HTML. 
 
+**Install**
+
+```
+pip install spacy-html-tokenizer
+```
+
 ## How it works
 
 Under the hood we use [`selectolax`](https://github.com/rushter/selectolax) to parse HTML. From there, common elements used for styling within traditional text elements elements (e.g. `<b>` or `<span>` inside of a `<p>`) are [unwrapped](https://selectolax.readthedocs.io/en/latest/parser.html#selectolax.parser.HTMLParser.unwrap_tags), meaning the text contained within those elements becomes nested inside their parent elements. You can change this with the `unwrapped_tags` argument to the constructor. Tags used for non-text content, such as `<script>` and `<style>` are removed. Then the text is extracted from each remaining terminal node that contains text. These texts are then tokenized with the standard tokenizer defaults and then combined into a single `Doc`. The end result is a `Doc`, but each element's text from the original document is also a [sentence](https://spacy.io/api/doc#sents), so you can iterate through each element's text with `doc.sents`.
