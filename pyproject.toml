@@ -1,6 +1,6 @@
 [tool.poetry]
 name = "spacy-html-tokenizer"
-version = "0.1.2"
+version = "0.1.3"
 description = "An HTML-friendly spaCy tokenizer"
 authors = ["Peter Baumgartner <5107405+pmbaumgartner@users.noreply.github.com>"]
 readme = "README.md"
@@ -28,4 +28,4 @@ requires = ["poetry-core>=1.0.0"]
 build-backend = "poetry.core.masonry.api"
 
 [tool.poetry.plugins."spacy_tokenizers"]
-"simple_corpus_stats" = "spacy_html_tokenizer.html_tokenizer:create_html_tokenizer"
+"html_tokenizer" = "spacy_html_tokenizer.html_tokenizer:create_html_tokenizer"
